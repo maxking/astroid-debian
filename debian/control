@@ -1,0 +1,28 @@
+Source: astroid
+Maintainer: Gaute Hope <eg@gaute.vetsj.com>
+Section: misc
+Priority: optional
+Standards-Version: 0.9.1
+Homepage: https://astroidmail.github.io/
+Build-Depends: debhelper (>= 9),
+			   scons,
+			   g++,
+			   libboost1.61-all-dev,
+			   libnotmuch-dev,
+			   libglibmm-2.4-dev,
+			   libgtkmm-3.0-dev,
+			   libwebkitgtk-3.0-dev,
+			   libgmime-2.6-dev,
+			   libsass-dev,
+			   libpeas-dev,
+			   libgirepository1.0-dev
+
+Package: astroid
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Astroid is a lightweight and fast Mail User Agent that provides a
+  graphical interface to searching, displaying and composing email, organized in
+  threads and tags. Astroid uses the notmuch backend for blazingly fast searches
+  through tons of email. Astroid searches, displays and composes emails - and
+  rely on other programs for fetching, syncing and sending email. Check out
+  Astroid in your general mail setup for a suggested complete e-mail solution.

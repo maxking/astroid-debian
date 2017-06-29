@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+SCONS=scons
+DEB_SCONS_OPTIONS := --prefix=/usr --destdir=$(CURDIR)/debian/astroid/usr
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	$(SCONS) $(DEB_SCONS_OPTIONS) -j 4 build
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf .sconf_tem/ .sconsign.dblite config.log
+
+override_dh_auto_install:
+	$(SCONS) $(DEB_SCONS_OPTIONS) install
